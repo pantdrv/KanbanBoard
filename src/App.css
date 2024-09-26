@@ -12,7 +12,19 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+table{
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  tr{
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    td{
+      border: 1px solid black;
+    }
+  }
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +47,124 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.table-style{
+  border: 2px solid black;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+} 
+
+
+#outer-div{
+  background-color: white;
+display: flex;;
+flex-direction: column;
+justify-content: space-evenly;
+grid-template-columns: repeat(3, 1fr);
+margin:auto;
+position: absolute;
+}
+
+.inner-div{
+  justify-content: space-evenly;
+  width: 200px;
+  height: 30px;
+  background-color: lightcyan;
+  border: 1px solid black;
+}
+.tab-container{
+  width: 50px;
+  height: 50px;
+  color: grey;
+}
+.tab-container-clicked{
+  width: 50px;
+  height: 50px;
+  color: blue;
+}
+
+.accordian-component{
+  width: 60%;
+  height: 100px;
+  background-color: lightgray;
+  border-radius: 10px;
+}
+.expand-content{
+  width: 60%;
+  height: 250px;
+  bottom: 5px;
+  background-color: bisque;
+  transition: ease;
+  border-radius: 10px;
+}
+.issue-wrapper{
+  display: flex;
+  margin-left: 30px;
+}
+.status-wrapper{
+  margin-left: 50px;
+  margin-top: 30px;
+}
+.show-status{
+  color: blueviolet;
+  position: absolute;
+  margin-top: 100px;
+}
+.sub-task-wrapper{
+  position: absolute;
+  margin-top: 120px;
+}
+.accordian-new {
+  width: 500px;
+  height: 50px;
+  background-color: grey;
+  border-radius: 6px;
+}
+.accordian-new ::after{
+  content: '+';
+  color: black;
+  right: 0;
+  position: absolute;
+  right: 5px
+}
+.navigation-bar{
+  width: 100%;
+  height: 100px;
+  background-color: antiquewhite;
+  position: fixed;
+  top: 0;
+  display: flex;
+}
+.navigation-label:hover{
+background-color: bisque;
+}
+.hamburger-menu{
+  width: 100%;
+  height: 100px;
+  background-color: antiquewhite;
+  position: fixed;
+  top: 0;
+  display: flex;
+  display: none;
+}
+@media screen and (max-width:650px)
+{
+  .hamburger-menu{
+    display: block;
+  }
+  .navigation-bar
+  {
+    display: none;
+  }
+}
+.todo-wrapper
+{
+  width: 300px;
+  height: 50px;
+  background-color: turquoise;
+display: flex;
+flex-direction: row;
+position: relative;
 }
