@@ -10,6 +10,7 @@ const Header = ({ onGroupChange, onSortChange }) => {
   };
   return (
     <div>
+      
       <div className="header">
         <div class="dropdown-toggle" onClick={toggleDropdown}>
           <img src={DisplaySVG} />
