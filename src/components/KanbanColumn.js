@@ -16,6 +16,7 @@ const KanbanColumn = ({ group, sortBy }) => {
     <div className="column">
       <h3 style={{position:'relative'}}>
         {" "}
+        
         <img src={group.icon} /> {group.title} ({group.items.length}){" "}
         <img style={{position:'absolute', right:'25px'}} src={AddSVG} /> <img  style={{position:'absolute', right:'0'}} src={DotSVG} />
       </h3>

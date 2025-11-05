@@ -14,6 +14,7 @@ import DoneSVG from "../icons/Done.svg";
 
 import Header from "./Header";
 
+
 const KanbanBoard = () => {
   const [tickets, setTickets] = useState([]);
   const [users, setUsers] = useState([]);
@@ -44,6 +45,7 @@ const KanbanBoard = () => {
 
   const getGroupedData = () => {
     let groupedData;
+    conle.log("")
     if (groupBy === "status") {
       groupedData = groupByStatus(tickets);
     } else if (groupBy === "priority") {
@@ -53,6 +55,7 @@ const KanbanBoard = () => {
     }
     return groupedData;
   };
+
 
   const groupByUser = (tickets, users) => {
     return users.map((user) => ({
