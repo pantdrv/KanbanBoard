@@ -45,6 +45,7 @@ const KanbanBoard = () => {
 
   const getGroupedData = () => {
     let groupedData;
+    conle.log("")
     if (groupBy === "status") {
       groupedData = groupByStatus(tickets);
     } else if (groupBy === "priority") {
@@ -55,7 +56,7 @@ const KanbanBoard = () => {
     return groupedData;
   };
 
-  
+
   const groupByUser = (tickets, users) => {
     return users.map((user) => ({
       title: user.name,
