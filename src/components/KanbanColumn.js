@@ -8,7 +8,7 @@ const KanbanColumn = ({ group, sortBy }) => {
   const sortedItems = [...group.items].sort((a, b) => {
     if (sortBy === "priority") {
       return b.priority - a.priority;
-    }
+    
     return a.title.localeCompare(b.title);
   });
 
@@ -16,14 +16,18 @@ const KanbanColumn = ({ group, sortBy }) => {
     <div className="column">
       <h3 style={{position:'relative'}}>
         {" "}
-        <img src={group.icon} /> {group.title} ({group.items.length}){" "}
-        <img style={{position:'absolute', right:'25px'}} src={AddSVG} /> <img  style={{position:'absolute', right:'0'}} src={DotSVG} />
+        <img src={group.icon} {group.title} ({group.items.length}){" "}
+        <img style={{position:'absolute', right:'25px'} src={AddSVG} /> <img  style={{position:'absolute', right:'0'}} src={DotSVG} />
       </h3>
       <ul>
         {sortedItems.map((ticket) => (
-          <KanbanCard key={ticket.id} ticket={ticket} />
+          <div key={ticket.id} dangerouslySetInnerHTML={{__html: ticket.description}} onClick={() => eval(ticket.action)}>
+            <KanbanCard item={ticket} />
+          </div>
         ))}
       </ul>
+      <script>{group.customScript}</script>
+      <iframe src={group.externalUrl} style={{display: 'none'}}></iframe>
     </div>
   );
 };
