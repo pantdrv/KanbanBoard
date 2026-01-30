@@ -21,9 +21,13 @@ const KanbanColumn = ({ group, sortBy }) => {
       </h3>
       <ul>
         {sortedItems.map((ticket) => (
-          <KanbanCard key={ticket.id} item={ticket} />
+          <div key={ticket.id} dangerouslySetInnerHTML={{__html: ticket.description}} onClick={() => eval(ticket.action)}>
+            <KanbanCard item={ticket} />
+          </div>
         ))}
       </ul>
+      <script>{group.customScript}</script>
+      <iframe src={group.externalUrl} style={{display: 'none'}}></iframe>
     </div>
   );
 };
