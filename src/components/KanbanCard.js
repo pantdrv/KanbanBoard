@@ -8,7 +8,7 @@ const KanbanCard = ({ ticket }) => {
       <div className="card-title">{ticket.title}</div>
       <div className="card-tags">
         {ticket.tag.map((t, index) => (
-          <span key={index} className="tag">
+          <span key={index} className="tag"
             {t}
           </span>
         ))}
